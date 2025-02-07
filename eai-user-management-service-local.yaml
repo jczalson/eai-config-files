@@ -30,8 +30,8 @@ spring:
     console:
       enabled: true
       path: /h2
-	  settings:
-	  web-allow-others: true
+      settings:
+      web-allow-others: true
       
 listen:
   event:
