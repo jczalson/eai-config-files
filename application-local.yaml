@@ -14,7 +14,7 @@ spring:
     config:
       override-system-properties: false
   datasource:
-    url: jdbc:mysql://localhost:3306/userdb;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS EAI_SCHEMA
+    url: jdbc:mysql://localhost:3306/userdb
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
