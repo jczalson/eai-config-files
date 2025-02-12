@@ -14,24 +14,19 @@ spring:
     config:
       override-system-properties: false
   datasource:
-    url: jdbc:h2:mem:userDB;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS EAI_SCHEMA
+    url: jdbc:mysql://localhost:3306/userdb;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS EAI_SCHEMA
     username: root
     password:
-    driver-class-name: org.h2.Driver
+    driver-class-name: com.mysql.jdbc.Driver
   jpa:
     generate-ddl: true
     show-sql: false
-    database-platform: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.MySQLDialect
     properties:
       hibernate:
         default_schema: EAI_SCHEMA
         format_sql: true
-  h2:
-    console:
-      enabled: true
-      path: /h2
-      settings:
-        web-allow-others: true
+  
       
 listen:
   event:
