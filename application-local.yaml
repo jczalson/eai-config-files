@@ -16,7 +16,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/userdb;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS EAI_SCHEMA
     username: root
-    password:
+    password: root
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
     generate-ddl: true
