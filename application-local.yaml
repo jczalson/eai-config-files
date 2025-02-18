@@ -15,13 +15,14 @@ spring:
     config:
       override-system-properties: false
   datasource:
-    url: jdbc:mysql://localhost:3306/userdb
+    url: jdbc:mysql://localhost:3306/userdb;autoReconnect=true;failOverReadOnly=false;maxReconnects=10
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     generate-ddl: true
     show-sql: false
+    database-platform: org.hibernate.dialect.MySQL8Dialect
     properties:
       hibernate:
         default_schema: EAI_SCHEMA
