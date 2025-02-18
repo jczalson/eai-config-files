@@ -22,7 +22,7 @@ spring:
   jpa:
     generate-ddl: true
     show-sql: false
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database-platform: org.hibernate.dialect.MySQLDialect
     properties:
       hibernate:
         default_schema: EAI_SCHEMA
