@@ -15,19 +15,24 @@ spring:
     config:
       override-system-properties: false
   datasource:
-    url: jdbc:mysql://localhost:3306/userdb
+    url: jdbc:h2:mem:userdb;DB_CLOSE_DELAY=-1
     username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 
+    driver-class-name: org.h2.Driver
   jpa:
     generate-ddl: true
     show-sql: false
-    database-platform: org.hibernate.dialect.MySQLDialect
+    database-platform: org.hibernate.dialect.H2Dialect
     properties:
       hibernate:
-        default_schema: EAI_SCHEMA
         format_sql: true
-  
+        ddl-auto: create
+  h2:
+    console:
+      enabled: true
+      path: /h2
+      settings:
+        web-allow-others: true
       
 listen:
   event:
