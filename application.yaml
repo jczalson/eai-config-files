@@ -25,7 +25,6 @@ spring:
     database-platform: org.hibernate.dialect.MySQLDialect
     properties:
       hibernate:
-        default_schema: EAI_SCHEMA
         format_sql: true
   
       
