@@ -15,7 +15,7 @@ spring:
     config:
       override-system-properties: false
   datasource:
-    url: jdbc:mysql://mysql-docker-container:3306/${MYSQL_DATABASE}
+    url: jdbc:mysql://${mysql-docker-container}:3366/${MYSQL_DATABASE}
     username: ${MYSQL_USER}
     password: ${MYSQL_ROOT_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
