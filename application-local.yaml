@@ -15,7 +15,7 @@ spring:
     config:
       override-system-properties: false
   datasource:
-    url: jdbc:mysql://localhost:3306/userdb
+    url: jdbc:mysql://192.168.0.5:3306/userdb
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
