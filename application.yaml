@@ -1,6 +1,6 @@
 eai:
   ui:
-    api-url: http://localhost:4900
+    api-url: http://localhost:4200
 
 eureka:
   client:
