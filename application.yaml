@@ -25,7 +25,7 @@ spring:
   
 
 jwt:
-  secret-key: s2233eerrttg56666666yyy777899jjhrttgtthduurjuuhjjuuhajeishhgfwh      
+  secret-key: s2233eerrttg56666666yyy777899jjhrttgtthduurjuuhjjuuhajeishhgfwhzz      
 listen:
   event:
     topic: true      
