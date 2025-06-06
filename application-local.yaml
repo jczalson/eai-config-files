@@ -28,7 +28,6 @@ spring:
         default_schema: EAI_SCHEMA
         format_sql: true
   
-      
 listen:
   event:
     topic: true      
