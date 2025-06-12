@@ -22,7 +22,9 @@ spring:
     properties:
       hibernate:
         format_sql: true
-  
+  devtools:
+    livereload:
+      enabled: true
 
 jwt:
   secret-key: s2233eerrttg56666666yyy777899jjhrttgtthduurjuuhjjuuhajeishhgfwh      
