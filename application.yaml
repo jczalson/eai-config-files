@@ -1,22 +1,7 @@
-# spring:
-#   cloud:
-#     config:
-#       override-system-properties: false
-#   datasource:
-#     url: jdbc:mysql://localhost:3366/userdb
-#     username: root
-#     password: 
-#     driver-class-name: com.mysql.cj.jdbc.Driver
-#   jpa:
-#     generate-ddl: true
-#     show-sql: false
-#     database-platform: org.hibernate.dialect.MySQLDialect
-#     properties:
-#       hibernate:
-#         format_sql: true
-#   devtools:
-#     livereload:
-#       enabled: true
+spring:
+  devtools:
+    livereload:
+      enabled: true
 eai:
   allowed-origins:
     - http://localhost:4200

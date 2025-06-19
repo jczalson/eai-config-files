@@ -22,10 +22,7 @@ spring:
     properties:
       hibernate:
         default_schema: EAI_SCHEMA
-        format_sql: true
-  devtools:
-    livereload:
-      enabled: true      
+        format_sql: true      
   
 listen:
   event:
