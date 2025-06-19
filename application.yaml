@@ -6,6 +6,7 @@ eai:
   allowed-origins:
     - http://localhost:4200
     - http://localhost:4400
+    - http://localhost:80
 jwt:
   secret-key: s2233eerrttg56666666yyy777899jjhrttgtthduurjuuhjjuuhajeishhgfwh      
 listen:
