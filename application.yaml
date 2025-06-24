@@ -1,7 +1,4 @@
-spring:
-  devtools:
-    livereload:
-      enabled: true
+
 eai:
   allowed-origins:
     - http://localhost:4200
