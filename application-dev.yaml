@@ -1,13 +1,10 @@
-eai:
-  ui:
-    api-url: http://10.1.120.2
-
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://10.1.120.4/eureka
+      defaultZone: ${eureka_service_url:http://localhost:8761/eureka}
   instance:
     hostname: localhost
+    prefer-ip-address: true
 
 spring:
   cloud:
