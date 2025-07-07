@@ -11,6 +11,10 @@ listen:
 bootstrap:
   servers: localhost:9092
 
+userActivity:
+  kafka:
+    topic: network.eai.userActivity  
+    
 security:
   protocol: NA
 
