@@ -12,6 +12,8 @@ bootstrap:
   servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
 
 userActivity:
+  stomp:
+    topic: /topic/message/userActivity/
   kafka:
     topic: network.eai.userActivity  
     
