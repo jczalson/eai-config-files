@@ -3,8 +3,6 @@ eureka:
     hostname: localhost
     prefer-ip-address: true
     client:
-    registerWithEureka: true
-    fetchRegistry: true
     serviceUrl:
       defaultZone: ${eureka-service-url:http://${eureka.instance.hostname}:8761/eureka}
 
