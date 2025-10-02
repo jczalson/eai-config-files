@@ -1,10 +1,10 @@
 eureka:
-  client:
-    serviceUrl:
-      defaultZone: ${eureka-service-url:http://localhost:8761/eureka}
-  instance:
+    instance:
     hostname: localhost
     prefer-ip-address: true
+    client:
+    serviceUrl:
+      defaultZone: ${eureka-service-url:http://${eureka.instance.hostname}:8761/eureka}
 
 spring:
   cloud:
