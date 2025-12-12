@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    config:
+      override-system-properties: false
+
+userActivity:
+  stomp:
+    topic: /topic/message/userActivity/
+  kafka:
+    topic: network.eai.userActivity  
+    
+listen:
+  event:
+    topic: true       
