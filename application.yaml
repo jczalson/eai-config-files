@@ -2,6 +2,6 @@
 eai:
   allowed-origins:
     - http://localhost:4200
-#secret-key
+#secret-keys
 jwt:
   secret-key: s2233eerrttg56666666yyy777899jjhrttgtthduurjuuhjjuuhajeishhgfwh     
