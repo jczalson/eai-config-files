@@ -1,0 +1,16 @@
+glpat-0NTS8xTG3_vZekSEVUMKeG86MQp1OmZpd2cyCw.01.121xntmoy   new one
+
+
+
+gitLab pwd: !Q@#$%22^&E*
+user: jczalson
+
+
+!Q@#$%22^&E*
+
+jczalson@gmail.com
+
+https://gitlab.com/zalson/eai-eureka-server.git
+
+to update the new token
+https://jczalson:glpat-0NTS8xTG3_vZekSEVUMKeG86MQp1OmZpd2cyCw.01.121xntmoy@gitlab.com/zalson/eai-config-server.git
