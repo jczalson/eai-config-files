@@ -10,7 +10,10 @@ spring:
   cloud:
     config:
       override-system-properties: false
-        
+  h2:
+    console:
+      enabled: true
+      path: /h2      
   
 listen:
   event:
