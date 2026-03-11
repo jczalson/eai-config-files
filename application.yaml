@@ -4,4 +4,4 @@ eai:
     - http://192.168.0.5:4200
 #secret-keys
 jwt:
-  secret-key: riennesertdecourir     
+  secret-key: ${JWT_SECRET}     

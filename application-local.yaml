@@ -11,9 +11,9 @@ spring:
     config:
       override-system-properties: false
   datasource:
-    url: jdbc:mysql://localhost:3306/userdb
-    username: root
-    password: root
+    url: jdbc:mysql://${MY_DB_HOST}:${MY_DB_PORT}/${MY_DB_NAME}
+    username: ${MY_DB_USER}
+    password: ${MY_DB_PWD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     generate-ddl: true
@@ -22,7 +22,8 @@ spring:
     properties:
       hibernate:
         default_schema: EAI_SCHEMA
-        format_sql: true  
+        format_sql: true 
+        ddl-auto: update 
 listen:
   event:
     topic: true      

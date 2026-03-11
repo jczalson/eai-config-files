@@ -11,8 +11,8 @@ spring:
     config:
       override-system-properties: false
   datasource:
-    url: jdbc:h2:mem:userdb
-    username: root
+    url: jdbc:h2:mem:${MY_DB_NAME}
+    username: ${MY_DB_USER}
     password:
     driver-class-name: org.h2.Driver
     test-on-borrow: true

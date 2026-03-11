@@ -4,7 +4,7 @@ spring:
       override-system-properties: false
 
 bootstrap:
-  servers: 192.168.0.5:9092
+  servers: ${MY_BOOTSTRAP_SERVER:localhost:9092}
   
 security:
   protocol: NA
@@ -13,3 +13,12 @@ sasl:
   mechanism: NA
   jaas:
     config: NA   
+
+MY_DB_HOST: 192.168.0.5
+MY_DB_PORT: 3306
+JWT_SECRET: riennesertdecourir
+MY_DB_NAME: userdb
+MY_DB_USER: root
+MY_DB_PWD: 
+ACTIVE_PROFILE: dev
+UI_APP_URL: 
