@@ -16,7 +16,7 @@ sasl:
 
 MY_DB_HOST: localhost
 MY_DB_PORT: 3306
-JWT_SECRET: riennesertdecourir
+JWT_SECRET: nemangerrienoujeunervoilabienvotregrandebetise
 MY_DB_NAME: userdb
 MY_DB_USER: root
 MY_DB_PWD: root
