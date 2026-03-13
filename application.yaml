@@ -4,9 +4,4 @@ eai:
     - http://192.168.0.5:4200
 #secret-keys
 jwt:
-  secret-key: ${JWT_SECRET}     
-eureka:
-    prefer-ip-address: true
-    client:
-    serviceUrl:
-      defaultZone: ${eureka-service-url:http://eai-eureka-service:8761/eureka}
+  secret-key: ${JWT_SECRET}
