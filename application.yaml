@@ -6,8 +6,6 @@ eai:
 jwt:
   secret-key: ${JWT_SECRET}     
 eureka:
-    instance:
-    hostname: localhost
     prefer-ip-address: true
     client:
     serviceUrl:
