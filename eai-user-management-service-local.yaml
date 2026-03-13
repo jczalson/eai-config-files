@@ -14,7 +14,7 @@ sasl:
   jaas:
     config: NA   
 
-MY_DB_HOST: 192.168.0.5
+MY_DB_HOST: localhost
 MY_DB_PORT: 3306
 JWT_SECRET: nemangerrienoujeunervoilabienvotregrandebetise
 MY_DB_NAME: userdb
