@@ -3,7 +3,6 @@ eureka:
     serviceUrl:
       defaultZone: ${eureka-service-url:http://eai-eureka-service:8761/eureka}
   instance:
-    hostname: localhost
     prefer-ip-address: true
 
 spring:
