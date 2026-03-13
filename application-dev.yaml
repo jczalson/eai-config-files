@@ -1,7 +1,7 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${eureka_service_url:http://host.docker.internal:8761/eureka}
+      defaultZone: ${eureka_service_url:http://localhost:8761/eureka}
   instance:
     prefer-ip-address: true
 
