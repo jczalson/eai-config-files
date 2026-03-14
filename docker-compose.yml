@@ -1,51 +1,4 @@
-services:
-  mysql-docker-container:
-    image: mysql:latest
-    container_name: mysql-docker-container
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "mysql-docker-container", "-u", "root", "-p$${MYSQL_ROOT_PASSWORD}"]
-      interval: 10s
-      retries: 3
-    volumes:
-      - mysql:/var/lib/mysql
-    networks:
-      - mysql_network  
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: userdb
-    ports:
-      - 3366:3306   
-    expose:
-      - 3366
-  zookeeper:
-    image: confluentinc/cp-zookeeper:latest
-    container_name: zookeeper
-    ports:
-      - 2181:2181
-    environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000 
-      ZOOKEEPER_SYNC_LIMIT: 2 
-      ZOOKEEPER_SERVERS: zookeeper-1:2888:3888  
-  kafka:
-    image: confluentinc/cp-kafka:latest
-    container_name: kafka
-    ports:
-      - 9092:9092
-    depends_on:
-      - zookeeper       
-    environment:
-      KAFKA_BROKER_ID: 1
-      KAFKA_LISTENERS: CONTROLLER://localhost:9091,HOST://0.0.0.0:9092,DOCKER://0.0.0.0:9093
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
-      KAFKA_PROCESS_ROLES: broker,controller
-      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-1:9092
-
-    #   # Required for a single node cluster
-      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-   
+services:  
   eai-eureka-service:
     build: ./eai-eureka-server
     container_name: eai-eureka-service
@@ -71,53 +24,46 @@ services:
       interval: 10s
       retries: 3 
     environment:
-      eureka-service-url: http://eai-eureka-service:8761/eureka/
+      # eureka-service-url: http://eai-eureka-service:8761/eureka/
       repository-url: https://gitlab.com/zalson/eai-config-files.git
-      token: gldt-4TXdd7joUVHwHYsVZCK-
+      token: glpat-0NTS8xTG3_vZekSEVUMKeG86MQp1OmZpd2cyCw.01.121xntmoy
       branch-name: main
       user: jczalson
-
-      # - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eai-eureka-service:8761/eureka/ 
-    
-    depends_on:
-      eai-eureka-service:
-        condition: service_healthy
+    # depends_on:
+    #   eai-eureka-service:
+    #     condition: service_healthy
 
   eai-user-management-service:
-    build: ./eai-user-management-service
     container_name: eai-user-management-service
-    image: img-user-management-service
+    image: img-eai-user-management-service:v1
+    build:
+      context: ./eai-user-management-service
+      args:
+        CONTAINER_PORT: ${CONTAINER_PORT}
+    restart: unless-stopped
+    # env_file:
+    #   - .env-dev
     ports:
-      - 9008:9008
+      - ${CONTAINER_PORT}:${HOST_PORT}
     expose:
-      - 9008
+      - ${CONTAINER_PORT}
     environment:
+      ACTIVE_PROFILE: ${ACTIVE_PROFILE}
+      MY_DB_HOST: ${MY_DB_HOST}
+      MY_DB_PORT: ${MY_DB_PORT}
+      MY_DB_USER: ${MY_DB_USER}
+      MY_DB_PWD: ${MY_DB_PWD}
+      MY_DB_NAME: ${MY_DB_NAME}
       # KAFKA_BOOTSTRAP_SERVERS: kafka-1:9092
-      eureka-service-url: http://eai-eureka-service:8761/eureka/
-      eai-config-server-details: http://eai-config-server:8888
-      SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url": "jdbc:mysql://192.168.0.5:3366/userdb?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true",
-        "spring.datasource.username": "root",
-        "spring.datasource.password": "root",
-        "spring.jpa.hibernate.ddl-auto" : "update",
-        "spring.jpa.properties.format_sql":"true",
-        "spring.jpa.properties.show_sql":"true"
-      }'
+      eureka_service_url: http://eai-eureka-service:8761/eureka/
+      eai_config_server_details: http://eai-config-server:8888
     depends_on:
       eai-config-server:
         condition: service_healthy
-      mysql-docker-container:
-        condition: service_healthy
-        
-
-  myapp:
-    build: ./eai-angu-ui
-    container_name: myapp
-    image: img-myapp
-    ports:
-      - 80:80
-    expose:
-      - 80      
+      eai-eureka-service:
+        condition: service_healthy  
+      # mysql-docker-container:
+      #   condition: service_healthy  
 
 volumes:
   mysql:
