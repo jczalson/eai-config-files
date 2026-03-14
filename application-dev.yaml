@@ -26,7 +26,9 @@ spring:
   h2:
     console:
       enabled: true
-      path: /h2      
+      path: /h2 
+      settings:
+        web-allow-others: true     
       
 listen:
   event:
