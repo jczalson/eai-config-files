@@ -24,14 +24,14 @@ services:
       interval: 10s
       retries: 3 
     environment:
-      # eureka-service-url: http://eai-eureka-service:8761/eureka/
-      repository-url: https://gitlab.com/zalson/eai-config-files.git
+      # eureka_service_url: http://eai-eureka-service:8761/eureka
+      repository_url: https://gitlab.com/zalson/eai-config-files.git
       token: glpat-0NTS8xTG3_vZekSEVUMKeG86MQp1OmZpd2cyCw.01.121xntmoy
       branch-name: main
       user: jczalson
-    # depends_on:
-    #   eai-eureka-service:
-    #     condition: service_healthy
+    depends_on:
+      eai-eureka-service:
+        condition: service_healthy
 
   eai-user-management-service:
     container_name: eai-user-management-service
@@ -54,16 +54,15 @@ services:
       MY_DB_USER: ${MY_DB_USER}
       MY_DB_PWD: ${MY_DB_PWD}
       MY_DB_NAME: ${MY_DB_NAME}
+      JWT_SECRET: ${JWT_SECRET}
       # KAFKA_BOOTSTRAP_SERVERS: kafka-1:9092
-      eureka_service_url: http://eai-eureka-service:8761/eureka/
+      eureka_service_url: http://eai-eureka-service:8761/eureka
       eai_config_server_details: http://eai-config-server:8888
     depends_on:
       eai-config-server:
         condition: service_healthy
       eai-eureka-service:
         condition: service_healthy  
-      # mysql-docker-container:
-      #   condition: service_healthy  
 
 volumes:
   mysql:
