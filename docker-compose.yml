@@ -55,7 +55,7 @@ services:
       MY_DB_PWD: ${MY_DB_PWD}
       MY_DB_NAME: ${MY_DB_NAME}
       JWT_SECRET: ${JWT_SECRET}
-      # KAFKA_BOOTSTRAP_SERVERS: kafka-1:9092
+      # MY_BOOTSTRAP_SERVER: ${MY_BOOTSTRAP_SERVER}
       eureka_service_url: http://eai-eureka-service:8761/eureka
       eai_config_server_details: http://eai-config-server:8888
     depends_on:
