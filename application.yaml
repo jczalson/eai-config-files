@@ -1,7 +1,7 @@
 
 eai:
   allowed-origins:
-    - http://localhost:4200
+    - http://host.docker.interna:4200
 #secret-keys
 jwt:
   secret-key: ${JWT_SECRET}
