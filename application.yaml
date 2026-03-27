@@ -1,7 +1,7 @@
 
 eai:
   allowed-origins:
-    - http://${UI_APP_URL}:4200
+    - http://localhost:4200
 #secret-keys
 jwt:
   secret-key: ${JWT_SECRET}
