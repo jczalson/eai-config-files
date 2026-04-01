@@ -2,6 +2,8 @@
 eai:
   allowed-origins:
     - http://localhost:4200
+  ui:
+    api-url: http://localhost:4200  
 #secret-keys
 jwt:
   secret-key: ${JWT_SECRET}
