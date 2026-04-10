@@ -21,8 +21,8 @@ spring:
     password: ${MY_DB_PWD}
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
-      initializationFailTimeout: 60000
-      # connectionTimeout: 30000
+      initializationFailTimeout: 20000
+      connectionTimeout: 10000
   jpa:
     generate-ddl: true
     show-sql: false
