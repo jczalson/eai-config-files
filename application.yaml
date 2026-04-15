@@ -3,6 +3,7 @@ eai:
   allowed-origins:
     - http://localhost:4200
     - http://localhost:4300
+    - http://localhost:4500
 
 #secret-keys
 jwt:
