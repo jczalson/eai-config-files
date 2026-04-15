@@ -29,9 +29,9 @@ services:
       token: glpat-0NTS8xTG3_vZekSEVUMKeG86MQp1OmZpd2cyCw.01.121xntmoy
       branch-name: main
       user: jczalson
-    depends_on:
-      eai-eureka-service:
-        condition: service_healthy
+    # depends_on:
+    #   eai-eureka-service:
+    #     condition: service_healthy
 
   eai-user-management-service:
     container_name: eai-user-management-service
@@ -44,9 +44,9 @@ services:
     # env_file:
     #   - .env-dev
     ports:
-      - ${CONTAINER_PORT}:${HOST_PORT}
+      - ${HOST_PORT}:${CONTAINER_PORT}
     expose:
-      - ${CONTAINER_PORT}
+      - ${HOST_PORT}
     environment:
       ACTIVE_PROFILE: ${ACTIVE_PROFILE}
       MY_DB_HOST: ${MY_DB_HOST}
@@ -55,15 +55,23 @@ services:
       MY_DB_PWD: ${MY_DB_PWD}
       MY_DB_NAME: ${MY_DB_NAME}
       JWT_SECRET: ${JWT_SECRET}
+      # UI_APP_URL: ${UI_APP_URL}
       # MY_BOOTSTRAP_SERVER: ${MY_BOOTSTRAP_SERVER}
       eureka_service_url: http://eai-eureka-service:8761/eureka
       eai_config_server_details: http://eai-config-server:8888
     depends_on:
-      eai-config-server:
-        condition: service_healthy
       eai-eureka-service:
+        condition: service_healthy
+      eai-config-server:
         condition: service_healthy  
-
+  myapp:
+    build: ./eai-angu-ui
+    container_name: myfrontend
+    image: img-myfrontend
+    ports:
+      - 80:80
+    expose:
+      - 80 
 volumes:
   mysql:
 networks:
