@@ -25,7 +25,7 @@ spring:
       connectionTimeout: 30000
   jpa:
     generate-ddl: true
-    show-sql: false
+    show-sql: true
     database-platform: org.hibernate.dialect.MySQLDialect
     properties:
       hibernate:
