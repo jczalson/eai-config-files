@@ -25,7 +25,7 @@ spring:
     validation-query-timeout: 1
   jpa:
     defer-datasource-initialization: true
-    generate-ddl: true
+    generate-ddl: false
     show-sql: false    
   h2:
     console:

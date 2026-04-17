@@ -24,13 +24,12 @@ spring:
       initializationFailTimeout: 60000
       connectionTimeout: 30000
   jpa:
-    generate-ddl: true
+    generate-ddl: false
     show-sql: false
     database-platform: org.hibernate.dialect.MySQLDialect
     properties:
       hibernate:
         default_schema: EAI_SCHEMA
-        format_sql: true 
         ddl-auto: update 
 listen:
   event:
