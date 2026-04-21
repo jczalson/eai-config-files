@@ -37,8 +37,8 @@ spring:
 listen:
   event:
     topic: true      
-logging:
-  level:
-    org:
-      hibernate:
-        SQL: DEBUG
+# logging:
+#   level:
+#     org:
+#       hibernate:
+#         SQL: DEBUG
