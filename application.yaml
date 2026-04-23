@@ -5,6 +5,7 @@ eai:
     - http://localhost:4300
     - http://localhost:4500
     - http://localhost:80
+    - http://localhost
 
 #secret-keys
 jwt:
