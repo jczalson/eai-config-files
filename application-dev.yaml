@@ -1,6 +1,6 @@
 eai:
   ui:
-    api-url: http://localhost:9008  
+    api-url: http://eai-user-management-service:9008  
 
 eureka:
   client:
