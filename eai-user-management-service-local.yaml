@@ -23,4 +23,5 @@ ACTIVE_PROFILE: local
 CONTAINER_PORT: 9008
 UI_APP_URL: localhost
 HOST_PORT: 9008
+# for kafka bootstrap server, uncomment the below line and set the value of MY_BOOTSTRAP_SERVER in .env file
 # MY_BOOTSTRAP_SERVER: 192.168.0.5:9092
